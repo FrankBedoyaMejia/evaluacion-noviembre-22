@@ -14,16 +14,20 @@ import Data from "./data.json";
 //    h5    (este h5 debe mostrar la cantidad de likes, pero si la misma es mayor a 10 debe decir "Más de 10 likes")
 
 export default function Post(props) {
+  const [useContador, setContador] = React.useState(0);
   function handleClick() {
-    props.repo.likes(1);
+    props.repo.likes = setContador(1);
     console.log("click");
   }
   return (
     <div className="posteo">
       <h3>{props.repo.titulo}</h3>
       <p>{props.repo.texto}</p>
-      <button>👍</button>
-      <h5 onClick={handleClick}>{props.repo.likes}</h5>
+      <button onClick={handleClick}>👍</button>
+      <h5>
+        {useContador}
+        {props.repo.likes}
+      </h5>
     </div>
   );
 }
