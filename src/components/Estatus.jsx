@@ -8,18 +8,13 @@ import React from "react";
 //    h1
 //    p > span     (el span mostrará la cantidad recibida por props)
 
-export default function Estatus(props) {
-  const [useContador, setContador] = React.useState(0);
-
-  function handleClick() {
-    setContador(1);
-  }
+export default function Estatus({ total }) {
   return (
     <header>
       <h1>Estatus de Posteos</h1>
       <p>
         Likes totales:
-        <span>{useContador}</span>
+        <span>{total}</span>
       </p>
     </header>
   );
